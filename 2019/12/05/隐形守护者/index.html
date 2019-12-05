@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html  lang="en">
+<head>
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 4.0.0" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>《隐形守护者》选项设置及故事结构分析 - Hexo</title>
+
+
+    <meta name="description" content="2019年秋季学期《游戏学导论》Report 3.">
+<meta name="keywords" content="游戏设计,2019年秋季学期">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《隐形守护者》选项设置及故事结构分析">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;05&#x2F;%E9%9A%90%E5%BD%A2%E5%AE%88%E6%8A%A4%E8%80%85&#x2F;index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="2019年秋季学期《游戏学导论》Report 3.">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;img&#x2F;%E7%AE%97%E6%B3%95%E9%9C%B8%E6%9D%83%E5%B0%81%E9%9D%A2.jpg">
+<meta property="og:updated_time" content="2019-12-05T07:14:08.533Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;img&#x2F;%E7%AE%97%E6%B3%95%E9%9C%B8%E6%9D%83%E5%B0%81%E9%9D%A2.jpg">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/favicon.ico">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+<style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+    
+    
+    
+    
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+    
+    
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+    
+    
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/logo.svg" alt="《隐形守护者》选项设置及故事结构分析" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">Home</a>
+                
+                <a class="navbar-item"
+                href="/archives">Archives</a>
+                
+                <a class="navbar-item"
+                href="/categories">Categories</a>
+                
+                <a class="navbar-item"
+                href="/tags">Tags</a>
+                
+                <a class="navbar-item"
+                href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    <a class="navbar-item" target="_blank" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;" target="_blank" rel="noopener">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="Search" href="javascript:;" target="_blank" rel="noopener">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
+<div class="card">
+    
+    <div class="card-image">
+        <span  class="image is-7by1">
+            <img class="thumbnail" src="/img/%E7%AE%97%E6%B3%95%E9%9C%B8%E6%9D%83%E5%B0%81%E9%9D%A2.jpg" alt="《隐形守护者》选项设置及故事结构分析">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-12-05T06:13:46.806Z">2019-12-05</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A/">课程作业</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    an hour read (About 6848 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                《隐形守护者》选项设置及故事结构分析
+            
+        </h1>
+        <div class="content">
+            <p>2019年秋季学期《游戏学导论》Report 3.</p>
+<a id="more"></a>
+
+<p>《隐形守护者》确实是一部走心的诚意之作——用14个小时通关三条线并遍历完所有选项达到100%探索度后的我也不能免俗地要说上一句“这58块钱花的值”。《隐形守护者》在文案台词、画面乃至配乐配音方面都有不少可圈可点之处。很多转折稍显生硬的台词，在配音老师们非常到位的情绪拿捏下代入感是非常强的；纯子咬字生涩的汉语也体验出制作团队对细节的重视。<strong>作为《游戏学导论》<em>文案叙事：结构与选项</em> 课后的报告，本文旨在从选项设置和故事结构发展两方面对《隐形守护者》的出彩之处展开分析。</strong></p>
+<h1 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h1><p>自《隐形守护者》之后各大平台纷纷试水互动叙事。如果说剧本是一款互动叙事作品面对受众时赖以输出的内容根基，那互动形式就是在剧本呈现方面起到重要作用的核心要素，未必越复杂越独特的形式效果就越好。《隐形守护者》中的大部分互动都是剧情节点的选项，少部分时候用模拟操纵物体与声音提示增强交互体验。<strong>好的选项不管是在玩家流程还是剧本结构里都当得起“正合时宜”四个字；另一方面，选项的设置关乎玩家诸如剧情理解、情感触动等体验维度，不管是画蛇添足过犹不及的多余选项，还是轻描淡写不痛不痒的无用选项，都是玩家体验时的减分项。“恰如其分”的选项不能不说颇考验制作人在游戏性方面的设计功底。</strong></p>
+<h2 id="逻辑的强解释性"><a href="#逻辑的强解释性" class="headerlink" title="逻辑的强解释性"></a>逻辑的强解释性</h2><p>《隐形守护者》中有很多选项， 譬如开局找内奸、与斧王喝酒、推理斧王和荣银海的阴谋时<strong>都是可以找到并遵循某套自洽的逻辑并通关的——这套逻辑作为解释选项合理性的原因，即便是跳出游戏后，以上帝视角俯瞰时都可以被认为是主角不可避免的情境与别无他法的最优解。</strong></p>
+<p>这类选项无所谓玩家本意如何。除非玩家不想继续游戏，否则都必须试出所有选项的正解。鲜少有玩家能一次性通关，但当大家都通过之后回头来看，会觉得“的确如此”：在面对连环拷问时，确实没有什么能比“先用已知为真的信息加深对方信任程度”来确保最后的谎言能够蒙混过关的路子了。<strong>玩家其实是在探寻答案而非做出决策，或者说游戏让玩家代入体验这段紧迫剧情的“故事性”；玩家未必会认同，但一定是信服的。</strong></p>
+<p>这种选项十分依赖作者对情节的塑造能力，也相对来说更能体现互动叙事作品的编剧水平和剧本深度。和推理小说烧脑的桥段一样，即便是没有切分成轮流交手的回合选项，受众也能大呼过瘾。而选项的意义就在于<strong>带给受众更设身处地的思考与感受</strong>。</p>
+<h2 id="有迹可循的推理vs无凭无据的悬念"><a href="#有迹可循的推理vs无凭无据的悬念" class="headerlink" title="有迹可循的推理vs无凭无据的悬念"></a>有迹可循的推理vs无凭无据的悬念</h2><p>有一部分的选项结果是<strong>即时反馈</strong>的，立刻<strong>就能告知玩家选项的意义</strong>；而另一部分则属于草灰蛇线伏延千里的那种，<strong>会对以后的结果产生深远的影响而非当下</strong>。</p>
+<p>站在玩家的角度，面对某一部分选项时读者<strong>能用充分的线索或可靠的推理来确定某个答案</strong>，如开篇接收到方老师关于图书馆的见面地点暗示，又如纯子的指甲油，<strong>这类选项前后印证，通过让玩家调用已有认知储备来解决问题，进而赋予玩家成就感</strong>。</p>
+<p>而另一部分选项玩家几乎很难从之前的游戏中获得决策依据，只能凭感觉选或猜测。玩家会感到茫然，但恰恰是这类“不够顺理成章”的选项<strong>为游戏留下悬念</strong>。但这类选项需要后续的剧情给予回应，以免玩家的期待落空，累积失望。</p>
+<h2 id="精巧的隐喻"><a href="#精巧的隐喻" class="headerlink" title="精巧的隐喻"></a>精巧的隐喻</h2><p>在关键的选项中，隐形守护者选项的逻辑是能说得通的。除了上述中提到的玩家接受度颇高的最优解，一些影响深远的选项与其导致的结果，游戏通关后还能掩卷咂摸。制作组的隐喻不仅体现在台词上，于选项的设置上也是构思精巧。知乎上一个问题 <em>为什么隐形守护者里，信仰不坚定选择救晓曼的肖途反而走了红色芳华线？（<a href="https://www.zhihu.com/question/315339143）" target="_blank" rel="noopener">https://www.zhihu.com/question/315339143）</a></em>的回答里谈到了肖途与女主的“相互救赎”：</p>
+<blockquote>
+<p>隐形守望者有一条很隐秘的线，就是关于五个女主的（包括顾君如）。你解脱了顾君如，她让你完成了任务，你救了晓曼，所以晓曼给你信心，度过三年牢狱，你救了纯子，所以纯子记录你的故事，为你洗脱冤屈。你从银狐手里挽救了望舒，她陪你度过余生。整个芳华线缺一不可，你是在挽救她们，她们也在挽救你（这一点吹爆）。对应的，你没有救下晓曼，所以不可避免的走上丧钟线or美丽世界线。</p>
+<p> 为什么隐形守护者里，信仰不坚定选择救晓漫的肖途反而走了红色芳华线？ - 郝心音的回答 - 知乎 <a href="https://www.zhihu.com/question/315339143/answer/619757926" target="_blank" rel="noopener">https://www.zhihu.com/question/315339143/answer/619757926</a> </p>
+</blockquote>
+<p>​    <strong>有些选项啊表面上是在推剧情，实际上是在考验人性</strong>。</p>
+<p>​    这些经得起推敲、也值得深思的选项立起了剧本高度，也是我最喜欢的文以载道：于无声处听惊雷，言有尽而意无穷。</p>
+<h1 id="故事结构"><a href="#故事结构" class="headerlink" title="故事结构"></a>故事结构</h1><p><em>自从亚里士多德以来，所有叙事理论方面的专家都在强调结构的重要性。（杰克 · 哈特《故事技巧：叙事性非虚构文学写作指南》）</em> 逻辑是组成部分之间的必然联系，而结构比逻辑更容易看得见、摸得着。</p>
+<p>不管是中国诗词的<strong>起承转合</strong>，还是日本能剧讲究的<strong>序破急</strong>，抑或是美国好莱坞的<strong>三幕式结构</strong>，都是勾勒在一条<strong>叙事弧线</strong>上的——形状就像是向右偏离的正态曲线。<em>“在叙事性写作方面，很少有作家能够明白故事线应该是呈弧线形的，<strong>不仅仅是由开头、中间和结尾组成，还有一连串的事件带领着读者前行</strong>。我读过很多单调乏味的作品，事件依次发生，故事本身并没有丝毫动感。”（《美国佬》杂志前任编辑吉姆 · 科林斯在2001年尼曼叙事大会上发表的观点，收录于2002年春季号的《尼曼报告》）</em></p>
+<p> <img src="/2019/12/05/%E9%9A%90%E5%BD%A2%E5%AE%88%E6%8A%A4%E8%80%85/%E5%8F%99%E4%BA%8B%E5%BC%A7%E7%BA%BF.png" alt="叙事弧线 引自拉里·布鲁克斯的《故事工程：掌握成功写作的六大核心技能》"> </p>
+<p>一条真正的叙事弧线会随着事件向前延伸，看起来就像一股即将撞碎的波浪，蓄势待发，下一秒就要迸溅成美丽的浪花。（杰克 · 哈特《故事技巧：叙事性非虚构文学写作指南》）时代背景波澜壮阔，《隐形守护者》的卧底潜伏更是曲折。在接下来分析故事结构时，笔者将首先按照游戏章节拆解叙事弧线，而后分别对故事的转折点与伏笔等结构内部的要素进行探讨。</p>
+<h2 id="叙事弧线"><a href="#叙事弧线" class="headerlink" title="叙事弧线"></a>叙事弧线</h2><h3 id="起：布局"><a href="#起：布局" class="headerlink" title="起：布局"></a>起：布局</h3><blockquote>
+<p>序章：回国后与方敏的羁绊、在恩师授意下接受党组织任务，开启双面生涯</p>
+<p>第一章“太阳之影”：进入亲日报社、开始逐渐获得反派信任（带纯子逛街）、遭遇叛变老师身殒后设计锄奸（与方敏的羁绊加深）</p>
+<p>第二章“狩猎者”：在刺杀吴明达时朝小顾开枪、拜访兴荣帮、迎来李峰与庄晓曼的考验</p>
+</blockquote>
+<p>《隐形守护者》故事的序章、第一章“太阳之影”和第二章“狩猎者”作为开局起势，肩负着一个特定而又关键的任务：对接下来的所有事情进行布局。</p>
+<p>我们可以看到相关内容被分解成几个重要的事项：与方敏间的羁绊、以恩师的死亡为代价获取武藤眼皮开始虚与委蛇暗度陈仓、成为孙先生的下线、因小顾之死接触李峰与庄晓曼，这些都为之后在主角身上发生的事情织起一张利害关系网。</p>
+<p>情节尚未展开，但就是在这里，玩家意识到：主角身负误解与不得已，与上级单线联络，在武藤公馆周旋时又遇到军统间谍；并且开始关心接下来会发生什么。在危险来临之前隐患初现，玩家对处于重大危机之下的主角越是同情，在发生改变时就越关心。玩家越关心，故事的效果就越好。</p>
+<h3 id="承：反应"><a href="#承：反应" class="headerlink" title="承：反应"></a>承：反应</h3><blockquote>
+<p>第三章“生死途”：营救商贸团（与庄晓曼发展出过命的交情）</p>
+<p>第四章“修罗场”：营救商贸团后续摆脱内奸怀疑、遭上线背后捅刀入党证明被烧毁</p>
+<p>第五章“菊与刀”：浅野与武藤的站队问题、主动寻求背靠资源</p>
+<p>红色芳华&amp;美好世界线-第六章“至暗抉择”：火车上向第二号示警、与晓曼并肩刺杀浅野</p>
+</blockquote>
+<p>先前布局的剧情是任务驱动的，通过一系列场景也让主角在游戏中意识到“出现的新的东西”。它引出新的追求、出人意料的需求、一种召唤或是一次旅程，这些通常都是令人恐慌或充满挑战性的。（拉里 · 布鲁克斯《故事工程：掌握成功写作的六大核心技能》）</p>
+<p>而在这一部分，主角通过行动、决定或犹豫对敌对势力做出反应，继续负重前行。</p>
+<p>在前一部分受刺杀吴明达的任务驱动时，玩家无论如何努力都无法保全小顾学妹。这是因为从第二部分开始，玩家扮演的主角才和敌对势力走上一条不可避免的决战之路，敌对主角对主角要做的、要得到的、要实现的、或者要改变的东西加以阻挠，防止其达到目的。</p>
+<p>欣慰的是，虽然恩师与小顾之死让主角和玩家逐渐意识到牺牲在所难免，但在此之后玩家所扮演的主角却在与虎谋皮、保证“活下去”的基础上，努力地追求“不泯灭的人性”。</p>
+<p>“不泯灭的人性”——其实就是主角漫长潜伏生涯里的总目标。</p>
+<blockquote>
+<p>隐形守护者中看似最重要的是潜伏，其实最重要的是人性。除了不能把枪给小顾那次，其余每次你按照着人性选，几乎都不会错。</p>
+<p>你下车了，也就意味着为了和组织接头，你放弃了晓曼的性命。看似你坚持了信仰，其实你失去了人性。</p>
+<p>还有很多地方也是如此，浅野找你揭发武藤的时候，如果为了更好地潜伏，你应该离开失势的武藤而投向浅野。但你和武藤之间的友谊左右了你的选择，最终也救了你的命。放走徐先生也是如此。把胡蜂的身份给晓曼也是如此。</p>
+<p>相反地，游戏中凡是那些为了所谓大义而放弃人性的选择，一般都没什么好下场。</p>
+<p> 为什么隐形守护者里，信仰不坚定选择救晓曼的肖途反而走了红色芳华线？ - van斯摩格的回答 - 知乎 <a href="https://www.zhihu.com/question/315339143/answer/644508160" target="_blank" rel="noopener">https://www.zhihu.com/question/315339143/answer/644508160</a> </p>
+</blockquote>
+<p>于是在第二部分中，我们看到主角在营救澳门商贸团时否定了庄晓曼的最初方案，努力找到了在当时情境下不可能更好的最优解；在浅野和武藤站队的选择上成为墙头草；不丢下火车上的庄晓曼。</p>
+<p>在追求目标的过程中，玩家逐渐看到并且关心主角真实性格的展现和逐层剖析。</p>
+<h3 id="转：进攻"><a href="#转：进攻" class="headerlink" title="转：进攻"></a>转：进攻</h3><blockquote>
+<p>红色芳华线-第七章“大风起兮”：与斧王周旋、高源初露端倪</p>
+<p>红色芳华线-第八章“游戏的规则”：斧王插手兴荣帮内乱、绑架纯子并祸水东引</p>
+<p>红色芳华线-第九章“远东残阳”：内乱波及逃亡、码头与高源对峙落下风</p>
+</blockquote>
+<p>在决定留在火车上与晓曼并肩作战并为第二号所救后，主角开始向眼前的障碍发起进攻。后期混战之局势力林立牵涉复杂，部分如地下工作者陆望舒、斧王冯一贤、设局者徐先生、军统间谍高源等的新内容被加入到故事中，成为主角由第二部分的“流浪者”、“响应者”转变成为积极主动、具有进攻性的“战斗者”的催化剂。于是我们看到主角在兴荣帮内乱波及到自己时毅然烧毁资料，并察觉高源异样宁死不服软。</p>
+<p>接下来最后一个谜团出现在这部分的结尾处，即纯子失踪之谜，第四部分紧随其后。</p>
+<h3 id="合：解决"><a href="#合：解决" class="headerlink" title="合：解决"></a>合：解决</h3><blockquote>
+<p>红色芳华线-第十章“极恶非道”：解决兴荣帮内乱、营救纯子</p>
+<p>美丽世界线-第七章“丛林法则”+第八章“美丽世界”：误杀第二号、叛归军统、一黑到底（ 枪毙陆望舒发国难财平息学生运动操控民意，桩桩件件，不择手段，毫无下限）</p>
+<p>扶桑安魂线-第六章“扶桑安魂曲”：异乡孤魂、残杀无辜</p>
+</blockquote>
+<p>从这部分开始，故事内就再未加入新的信息。所有主角需要了解、处理或与之共事的一切都已经出现在故事中了。</p>
+<p>在红色芳华线中，主角成功营救纯子——在纯子被绑架这个事件的解决中，他并不是次要的旁观者。</p>
+<p>而在背弃了信仰的日本及军统线中，主角同样为了达到目的，做了必须做的事情。只是这时候他的目的变成了：偷生。</p>
+<p>故事峰回路转，叙事弧线上升下降。但需要注意的是，希望的新生与幻灭、谜题的设定与揭晓、悬念的形成和解开，可以出现在故事从头到尾的任意阶段——可以将它们画成一条曲线，并向上缠绕在叙事弧线上。</p>
+<p>私以为游戏剧本创作并不必恪守精确而严格的结构规则，这是因为相比影视剧或小说，游戏中的元素更为复杂。而这些元素是如何相互联系、相互作用，又是如何做到彼此平衡、相得益彰的，故事结构的内部运转才是关键。</p>
+<h2 id="故事转折点的作用"><a href="#故事转折点的作用" class="headerlink" title="故事转折点的作用"></a>故事转折点的作用</h2><p>诚如上文所说，故事中的曲折常有但转折点不多。每个转折点都是一个情节转折，但并非所有情节转折都构成故事上的转折点。一个极端的例子就是在最后一张用自己换下陆望舒但并未被武藤志雄处死，并非转折点是显而易见的。</p>
+<p>转折点的场景十分重要，支撑着整个故事的结构也对故事中的其他场景也起着关键作用。</p>
+<table>
+<thead>
+<tr>
+<th align="center">转折点</th>
+<th align="center">章节</th>
+<th align="center">剧情</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">复仇的子弹</td>
+<td align="center">第二章 狩猎者</td>
+<td align="center">庄晓曼因小顾之死在酒吧拷问主角真心，最终留主角一命</td>
+</tr>
+<tr>
+<td align="center">列车上的去与留</td>
+<td align="center">第六章 至暗抉择</td>
+<td align="center">面对浅野的怀疑和疑似组织的接头人，做出下车或留在车上的决定</td>
+</tr>
+</tbody></table>
+<p>“复仇的子弹”将故事的语境由布局模式转向反应模式。如果说主角杀小顾学妹还是在任务驱动下的别无选择。那在庄晓曼给主角留下那颗子弹后，主角开始采取措施作出反应。张力和重大危机在布局阶段就会出现，但冲突的实质和暗含的意思在这里才揭示出来。</p>
+<p>这次为了完成任务杀的是毫无主见的小顾学妹，那以后呢？是不是不惜一切地完成组织任务就是合格的潜伏者了呢？——并不是。这个转折点之后的主角让我们看到了改变，营救商贸团不必以方敏的生命为代价，在火车上用武藤的杀手吸引浅野注意，主角对“人性”的具体追求自此而始。</p>
+<p>而在经历了列车上的去与留后，只要主角没有选择沦丧信仰，这个转折点之后就是主动进攻的时刻——即便回到上海又是一轮新的风暴。斧王的连环拷问是敌对势力本质和势力的又一次体现，而且比之前更加骇人——主角的信仰与坚持也更加无法动摇。</p>
+<p>最后顺便摘录一段关于转折点在创作角度的作用，来自拉里 · 布鲁克斯的《故事工程：掌握成功写作的六大核心技能》</p>
+<blockquote>
+<p>通过设计这些关键的转折点场景，熟悉它们的情况并掌握使故事流畅的方法。理解需要为何种场景设置转折点，让它们产生成效，并且将它们连接在一起，你就成功地设计好了故事架构，完成了小说或剧本一大半的工程。</p>
+<p>无论在创作的什么阶段，你都可以朝着转折点或者从转折点出来进行创作。由此设置场景，然后再从场景推动故事发展。</p>
+</blockquote>
+<h2 id="不依赖伏笔的高潮情节"><a href="#不依赖伏笔的高潮情节" class="headerlink" title="不依赖伏笔的高潮情节"></a>不依赖伏笔的高潮情节</h2><p>在某些情况下，作者暗埋一个又一个伏笔，然后通过某一个导火线把所有伏笔轰然炸开，引爆高潮情节。这种现象在长篇连载的网络小说中尤其常见，即用伏笔吸引读者追看，用高潮赋予读者爽感。</p>
+<p>但《隐形守护者》之于玩家体验的定位并非“爽感”，作为一款买断制的游戏也没必要指望用悬念情节吊着玩家。一部分伏笔为选项的正解提供线索，是玩家成就感的来源；另一部分伏笔是制作方重视细节的产物，更是无数玩家游戏之外的意难平。</p>
+<p>不依赖暗埋的伏笔引爆高潮，那么《隐形守护者》是如何塑造高潮情节的呢？</p>
+<table>
+<thead>
+<tr>
+<th align="center">高潮</th>
+<th align="center">章节</th>
+<th align="center">剧情</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">学联遭叛，恩师身殒</td>
+<td align="center">第一章：太阳之影</td>
+<td align="center">学联遭到叛徒背叛，方老师和学联学生被控制。方老师用命换得武藤志雄对主角的信任。</td>
+</tr>
+<tr>
+<td align="center">学妹的绝望</td>
+<td align="center">第二章：狩猎者</td>
+<td align="center">在执行刺杀吴明达任务时，主角将保护汉奸吴明达的小顾学妹杀死，并将其嫁祸成杀害吴明达的凶手。</td>
+</tr>
+<tr>
+<td align="center">胡队长的指控</td>
+<td align="center">第四章：修罗场</td>
+<td align="center">为营救商贸团而栽赃日方人员的计划成功后，主角接受胡队长的指控与武藤的怀疑</td>
+</tr>
+<tr>
+<td align="center">密室的陷阱</td>
+<td align="center">第四章：修罗场</td>
+<td align="center">从武藤公馆解职回到图书馆后，在密室被孙氏父子袭击</td>
+</tr>
+<tr>
+<td align="center">刺杀浅野博文</td>
+<td align="center">第六章：至暗抉择</td>
+<td align="center">在列车上交出武藤刺客换取浅野信任，并刺杀浅野</td>
+</tr>
+<tr>
+<td align="center">“第二号”之问</td>
+<td align="center">第六章：至暗抉择</td>
+<td align="center">在第二号佯装军统人员拷问时选择保全庄晓曼</td>
+</tr>
+<tr>
+<td align="center">冯一贤连环五问</td>
+<td align="center">第七章：大风起兮</td>
+<td align="center">在冯一贤追问下虚虚实实拒绝承认地下党身份</td>
+</tr>
+<tr>
+<td align="center">营救方敏并出逃</td>
+<td align="center">军统线-第八章：美丽世界</td>
+<td align="center">用舆论打压方敏后良心发现，营救方敏并逃亡</td>
+</tr>
+</tbody></table>
+<p>上表列出了一部分剧情高潮点。笔者倾向于《隐形守护者》大部分情况下用一组角色的立场冲突与性格特质来塑造高潮情节。谍战题材各为其主立场冲突是常态，性格特质体现的比较明显的有懦弱没有主见的顾君如、自私叛党的孙氏父子、笑里藏刀的冯一贤等。尽管可以找到这些高潮情节与此前故事的关联，但还远不到专门揭开先前伏笔的程度。</p>
+<p>这种高潮情节辅以能交互设计（如限时的选项）往往善于“唤起玩家的感动”，甚至让玩家会对角色产生强烈的情感依附。“这样一来，前面与各个相关的章节（相遇、角色的过去、与角色互相帮助等）将在玩家的心中更加鲜明，玩家对角色倾注的心思与感情也将更加清晰。”（佐佐木智广《游戏剧本怎么写》）</p>
+<h1 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h1><p>笔者在去年这时候曾有幸参与 i-MUR 高校研究员的互动叙事剧本评测课题。剧本评测从设定、角色和故事三个维度进行。以当时的评判标准来看，《隐形守护者》在“情节”和“交互”部分都能给到最高分。</p>
+<blockquote>
+<p>情节：角色目标明确，重大抉择充满压力感。重点情节铺设具有情理之中、意料之外的效果，伏笔与呼应相扣，故事价值基线明晰。</p>
+<p>交互：剧情选项密集，分支结构复杂多变，且分支包含大量非重复情节。拥有众多让人印象深刻的压力选择。结局众多。</p>
+<p>来源：i-MUR（腾讯互娱市场与用户研究中心）《互动叙事剧本评测标准》</p>
+</blockquote>
+<p>通关后回头来看，作死的行动千千万，能成功活下去的路却只有一条。严格来讲，《隐形守护者》并没有交给玩家任何发挥主观能动性改造世界的权利（参见橙光游戏《官居几品》） ；玩家表面上看似能影响故事走向，实质上却是在剧情提供的开放空间内试错和碰壁。但如前文所述：《隐形守护者》不是升级流爽文，它的内核其实是“坚守”，且在顾君如之死后就明确了“人性高于党性”的追求，屠龙的少年只有这一条容不得半点行差踏错的路走到头，才不会变成恶龙。从这个意义上来说，游戏的机制更倾向于线性解谜而非非线性养成。</p>
+<p>但笔者丝毫不怀疑试错和碰壁是《隐形守护者》中能够让玩家代入并切实感受到九死一生潜伏艰险的最佳策略，也是和谍战题材匹配度最高的情感体验方式。其他互动叙事作品中广受称道的开放世界，放在谍战题材里极大可能会分散玩家的核心体验；各种花式死亡用于不合适的题材也可能会让玩家觉得选项敷衍了事。</p>
+<p>年初的《隐形守护者》是国产游戏的一次全新尝试，《隐形守护者》的制作组在某种意义上是和剧中角色一样的先驱者：“在娱乐至上的环境下，很多人依然希望探讨严肃话题，而将严肃话题引入的载体可以是娱乐性的。”   </p>
+<p>时至今日，笔者依然坚持“游戏设计法无定法”的观点，没有一款游戏能通过复制前作的成功之处而后来居上。但无论如何，前人开辟的道理，后人没道理越走越差。</p>
+<p>“前人风骨点为灯，少年烧魄赴以追”。</p>
+<p>当如是也。</p>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/2019%E5%B9%B4%E7%A7%8B%E5%AD%A3%E5%AD%A6%E6%9C%9F/" rel="tag">2019年秋季学期</a>, <a class="has-link-grey -link" href="/tags/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1/" rel="tag">游戏设计</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/11/24/1118-1124%20%E5%AF%BB%E7%AB%A0%E6%91%98%E5%8F%A5/">
+                <span class="level-item">1118-1124 寻章摘句</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">Comments</h3>
+        
+<div id="valine-thread" class="content"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: false,
+        verify: false,
+        app_id: 'LDJzGMGB0QU22i5XDxFIO00s-gzGzoHsz',
+        app_key: 'teLapvp6balS3vMIdwIfTjrd',
+        placeholder: '生活不易，居居叹气'
+    });
+</script>
+
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
+                <div>
+                    
+                    <figure class="image is-128x128 has-mb-6">
+                        <img class="" src="/images/avatar.jpg" alt="Dawn.Lu">
+                    </figure>
+                    
+                    <p class="is-size-4 is-block">
+                        Dawn.Lu
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        Communication&amp;Computer
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>WuHan, China</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Posts
+                    </p>
+                    <a href="/archives">
+                        <p class="title has-text-weight-normal">
+                            3
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Categories
+                    </p>
+                    <a href="/categories">
+                        <p class="title has-text-weight-normal">
+                            3
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Tags
+                    </p>
+                    <a href="/tags">
+                        <p class="title has-text-weight-normal">
+                            5
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/ppoffice" target="_blank">
+                Follow</a>
+        </div>
+        
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="Github" href="https://github.com/ppoffice">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="Facebook" href="https://facebook.com">
+                
+                <i class="fab fa-facebook"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="Twitter" href="https://twitter.com">
+                
+                <i class="fab fa-twitter"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="Dribbble" href="https://dribbble.com">
+                
+                <i class="fab fa-dribbble"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="RSS" href="/">
+                
+                <i class="fas fa-rss"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+
+    <div class="card widget" id="toc">
+        <div class="card-content">
+            <div class="menu">
+                <h3 class="menu-label">
+                    Catalogue
+                </h3>
+                <ul class="menu-list"><li>
+        <a class="is-flex" href="#选项">
+        <span class="has-mr-6">1</span>
+        <span>选项</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#逻辑的强解释性">
+        <span class="has-mr-6">1.1</span>
+        <span>逻辑的强解释性</span>
+        </a></li><li>
+        <a class="is-flex" href="#有迹可循的推理vs无凭无据的悬念">
+        <span class="has-mr-6">1.2</span>
+        <span>有迹可循的推理vs无凭无据的悬念</span>
+        </a></li><li>
+        <a class="is-flex" href="#精巧的隐喻">
+        <span class="has-mr-6">1.3</span>
+        <span>精巧的隐喻</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#故事结构">
+        <span class="has-mr-6">2</span>
+        <span>故事结构</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#叙事弧线">
+        <span class="has-mr-6">2.1</span>
+        <span>叙事弧线</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#起：布局">
+        <span class="has-mr-6">2.1.1</span>
+        <span>起：布局</span>
+        </a></li><li>
+        <a class="is-flex" href="#承：反应">
+        <span class="has-mr-6">2.1.2</span>
+        <span>承：反应</span>
+        </a></li><li>
+        <a class="is-flex" href="#转：进攻">
+        <span class="has-mr-6">2.1.3</span>
+        <span>转：进攻</span>
+        </a></li><li>
+        <a class="is-flex" href="#合：解决">
+        <span class="has-mr-6">2.1.4</span>
+        <span>合：解决</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#故事转折点的作用">
+        <span class="has-mr-6">2.2</span>
+        <span>故事转折点的作用</span>
+        </a></li><li>
+        <a class="is-flex" href="#不依赖伏笔的高潮情节">
+        <span class="has-mr-6">2.3</span>
+        <span>不依赖伏笔的高潮情节</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#写在最后">
+        <span class="has-mr-6">3</span>
+        <span>写在最后</span>
+        </a></li></ul>
+            </div>
+        </div>
+    </div>
+
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Links
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="https://akatheater.github.io/" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">奶酪包</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">akatheater.github.io</span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a class="level is-mobile" href="https://skmtjun.github.io/" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">Skmtjun</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">skmtjun.github.io</span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a class="level is-mobile" href="https://78ij.github.io/" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">嘉木老师</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">78ij.github.io</span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a class="level is-mobile" href="https://dragoonkiller.github.io/archives/#menu" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">DK</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">dragoonkiller.github.io</span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a class="level is-mobile" href="https://creeper121386.github.io" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">WHY</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">creeper121386.github.io</span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a class="level is-mobile" href="https://okita-kin.github.io/Okita-kin.github.io/" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">阿瑾</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">okita-kin.github.io</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Categories
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/%E5%A4%9A%E8%AF%BB%E4%B9%A6/">
+            <span class="level-start">
+                <span class="level-item">多读书</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A/">
+            <span class="level-start">
+                <span class="level-item">课程作业</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/%E9%9D%A2%E8%AF%95/">
+            <span class="level-start">
+                <span class="level-item">面试</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Tag Cloud
+        </h3>
+        <a href="/tags/2019%E5%B9%B4%E7%A7%8B%E5%AD%A3/" style="font-size: 10px;">2019年秋季</a> <a href="/tags/2019%E5%B9%B4%E7%A7%8B%E5%AD%A3%E5%AD%A6%E6%9C%9F/" style="font-size: 10px;">2019年秋季学期</a> <a href="/tags/%E5%9D%91%E4%B8%8D%E8%83%BD%E7%99%BD%E8%B8%A9%E7%B3%BB%E5%88%97/" style="font-size: 10px;">坑不能白踩系列</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6/" style="font-size: 10px;">数据科学</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1/" style="font-size: 20px;">游戏设计</a>
+    </div>
+</div>
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/12/05/%E9%9A%90%E5%BD%A2%E5%AE%88%E6%8A%A4%E8%80%85/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/img/%E7%AE%97%E6%B3%95%E9%9C%B8%E6%9D%83%E5%B0%81%E9%9D%A2.jpg" alt="《隐形守护者》选项设置及故事结构分析">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-05T06:13:46.806Z">2019-12-05</time></div>
+                    <a href="/2019/12/05/%E9%9A%90%E5%BD%A2%E5%AE%88%E6%8A%A4%E8%80%85/" class="title has-link-black-ter is-size-6 has-text-weight-normal">《隐形守护者》选项设置及故事结构分析</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A/">课程作业</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/11/24/1118-1124%20%E5%AF%BB%E7%AB%A0%E6%91%98%E5%8F%A5/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/img/%E7%AE%97%E6%B3%95%E9%9C%B8%E6%9D%83%E5%B0%81%E9%9D%A2.jpg" alt="1118-1124 寻章摘句">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-24T07:18:41.256Z">2019-11-24</time></div>
+                    <a href="/2019/11/24/1118-1124%20%E5%AF%BB%E7%AB%A0%E6%91%98%E5%8F%A5/" class="title has-link-black-ter is-size-6 has-text-weight-normal">1118-1124 寻章摘句</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E5%A4%9A%E8%AF%BB%E4%B9%A6/">多读书</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/11/18/%E9%A1%B9%E7%9B%AE%E7%BB%8F%E5%8E%86%E5%9B%9E%E7%AD%94%E6%80%9D%E8%B7%AF/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/img/%E5%92%B8%E9%B1%BC%E8%A1%A8%E6%83%85%E5%8C%85.jpg" alt="面试中项目经历回答思路">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-18T15:53:40.723Z">2019-11-18</time></div>
+                    <a href="/2019/11/18/%E9%A1%B9%E7%9B%AE%E7%BB%8F%E5%8E%86%E5%9B%9E%E7%AD%94%E6%80%9D%E8%B7%AF/" class="title has-link-black-ter is-size-6 has-text-weight-normal">面试中项目经历回答思路</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E9%9D%A2%E8%AF%95/">面试</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archives
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/12/">
+                <span class="level-start">
+                    <span class="level-item">December 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/11/">
+                <span class="level-start">
+                    <span class="level-item">November 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Tags
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/2019%E5%B9%B4%E7%A7%8B%E5%AD%A3/">
+                        <span class="tag">2019年秋季</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/2019%E5%B9%B4%E7%A7%8B%E5%AD%A3%E5%AD%A6%E6%9C%9F/">
+                        <span class="tag">2019年秋季学期</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E5%9D%91%E4%B8%8D%E8%83%BD%E7%99%BD%E8%B8%A9%E7%B3%BB%E5%88%97/">
+                        <span class="tag">坑不能白踩系列</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6/">
+                        <span class="tag">数据科学</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1/">
+                        <span class="tag">游戏设计</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/12/05/%E9%9A%90%E5%BD%A2%E5%AE%88%E6%8A%A4%E8%80%85/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/img/%E7%AE%97%E6%B3%95%E9%9C%B8%E6%9D%83%E5%B0%81%E9%9D%A2.jpg" alt="《隐形守护者》选项设置及故事结构分析">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-05T06:13:46.806Z">2019-12-05</time></div>
+                    <a href="/2019/12/05/%E9%9A%90%E5%BD%A2%E5%AE%88%E6%8A%A4%E8%80%85/" class="title has-link-black-ter is-size-6 has-text-weight-normal">《隐形守护者》选项设置及故事结构分析</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A/">课程作业</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/11/24/1118-1124%20%E5%AF%BB%E7%AB%A0%E6%91%98%E5%8F%A5/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/img/%E7%AE%97%E6%B3%95%E9%9C%B8%E6%9D%83%E5%B0%81%E9%9D%A2.jpg" alt="1118-1124 寻章摘句">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-24T07:18:41.256Z">2019-11-24</time></div>
+                    <a href="/2019/11/24/1118-1124%20%E5%AF%BB%E7%AB%A0%E6%91%98%E5%8F%A5/" class="title has-link-black-ter is-size-6 has-text-weight-normal">1118-1124 寻章摘句</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E5%A4%9A%E8%AF%BB%E4%B9%A6/">多读书</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/11/18/%E9%A1%B9%E7%9B%AE%E7%BB%8F%E5%8E%86%E5%9B%9E%E7%AD%94%E6%80%9D%E8%B7%AF/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/img/%E5%92%B8%E9%B1%BC%E8%A1%A8%E6%83%85%E5%8C%85.jpg" alt="面试中项目经历回答思路">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-18T15:53:40.723Z">2019-11-18</time></div>
+                    <a href="/2019/11/18/%E9%A1%B9%E7%9B%AE%E7%BB%8F%E5%8E%86%E5%9B%9E%E7%AD%94%E6%80%9D%E8%B7%AF/" class="title has-link-black-ter is-size-6 has-text-weight-normal">面试中项目经历回答思路</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E9%9D%A2%E8%AF%95/">面试</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archives
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/12/">
+                <span class="level-start">
+                    <span class="level-item">December 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/11/">
+                <span class="level-start">
+                    <span class="level-item">November 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Tags
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/2019%E5%B9%B4%E7%A7%8B%E5%AD%A3/">
+                        <span class="tag">2019年秋季</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/2019%E5%B9%B4%E7%A7%8B%E5%AD%A3%E5%AD%A6%E6%9C%9F/">
+                        <span class="tag">2019年秋季学期</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E5%9D%91%E4%B8%8D%E8%83%BD%E7%99%BD%E8%B8%A9%E7%B3%BB%E5%88%97/">
+                        <span class="tag">坑不能白踩系列</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6/">
+                        <span class="tag">数据科学</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1/">
+                        <span class="tag">游戏设计</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/logo.svg" alt="《隐形守护者》选项设置及故事结构分析" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2019 John Doe&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a
+                        href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("en");</script>
+
+<script>
+var IcarusThemeSettings = {
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+    
+    
+<script src="/js/animation.js"></script>
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+<script src="/js/gallery.js" defer></script>
+
+    
+    
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/" target="_blank" rel="noopener">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+    
+    
+<a id="back-to-top" title="Back to Top" href="javascript:;" target="_blank" rel="noopener">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>
