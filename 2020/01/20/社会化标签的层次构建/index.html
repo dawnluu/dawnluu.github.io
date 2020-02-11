@@ -19,7 +19,7 @@
 <meta property="og:description" content="关于社会化标签的文本分析方法.">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;img&#x2F;%E7%A4%BE%E4%BC%9A%E5%8C%96%E6%A0%87%E7%AD%BE%E7%9A%84%E5%B1%82%E6%AC%A1%E6%9E%84%E5%BB%BA%E5%B0%81%E9%9D%A2.png">
-<meta property="og:updated_time" content="2020-02-10T11:28:08.098Z">
+<meta property="og:updated_time" content="2020-02-11T07:59:32.266Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;img&#x2F;%E7%A4%BE%E4%BC%9A%E5%8C%96%E6%A0%87%E7%AD%BE%E7%9A%84%E5%B1%82%E6%AC%A1%E6%9E%84%E5%BB%BA%E5%B0%81%E9%9D%A2.png">
 
@@ -155,7 +155,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    10 minutes read (About 1542 words)
+                    12 minutes read (About 1855 words)
                 </span>
                 
                 
@@ -202,12 +202,25 @@
 <h1 id="Case：B站“剑与远征”关键词下的视频标签层次构建"><a href="#Case：B站“剑与远征”关键词下的视频标签层次构建" class="headerlink" title="Case：B站“剑与远征”关键词下的视频标签层次构建"></a>Case：B站“剑与远征”关键词下的视频标签层次构建</h1><blockquote>
 <p>数据说明与清洗：截止1.22 16.03时采集到的B站“剑与远征”关键词下的视频条数去重清洗后共有795条，320个标签，标签所标注视频数呈现明显的长尾效应（如图1）。由于标签的随意性，绝大部分的标签被少量人使用。因此，我们在基于标签的标注资源数进行排序后，选择标注数最多的20个标签进行层次构建，其中 <em>Top20</em> 标签标注的视频数最少为27。</p>
 </blockquote>
-<p> <img src="/2020/01/20/%E7%A4%BE%E4%BC%9A%E5%8C%96%E6%A0%87%E7%AD%BE%E7%9A%84%E5%B1%82%E6%AC%A1%E6%9E%84%E5%BB%BA/%E9%95%BF%E5%B0%BE%E6%95%88%E5%BA%94%E6%98%BE%E8%91%97.png" alt="B站“剑与远征”关键词下的标签标注资源数"> </p>
+<p> <img src="/2020/01/20/%E7%A4%BE%E4%BC%9A%E5%8C%96%E6%A0%87%E7%AD%BE%E7%9A%84%E5%B1%82%E6%AC%A1%E6%9E%84%E5%BB%BA/%E9%95%BF%E5%B0%BE%E6%95%88%E5%BA%94%E6%98%BE%E8%91%97.png" alt="图1：B站“剑与远征”关键词下的标签标注资源数"> </p>
 <h2 id="计算两两标签间的相似度矩阵"><a href="#计算两两标签间的相似度矩阵" class="headerlink" title="计算两两标签间的相似度矩阵"></a>计算两两标签间的相似度矩阵</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> xlrd, copy, math</span><br><span class="line"><span class="hljs-keyword">from</span> openpyxl <span class="hljs-keyword">import</span> Workbook</span><br><span class="line"><span class="hljs-keyword">import</span> numpy</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># 定义相似度计算函数</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">sim</span><span class="hljs-params">(a,b)</span>:</span></span><br><span class="line">    sim=len(list(set(a).intersection(set(b))))/max(len(a),len(b))</span><br><span class="line">    <span class="hljs-keyword">return</span> sim</span><br><span class="line"></span><br><span class="line">workbook = xlrd.open_workbook(<span class="hljs-string">'Top20标签.xlsx'</span>)</span><br><span class="line">sheet = workbook.sheet_by_index(<span class="hljs-number">0</span>)</span><br><span class="line"></span><br><span class="line">rows = sheet.nrows</span><br><span class="line">cols = sheet.ncols</span><br><span class="line">tag_names = sheet.col_values(<span class="hljs-number">0</span>)</span><br><span class="line"></span><br><span class="line">wb = Workbook()</span><br><span class="line">ws = wb.active</span><br><span class="line"></span><br><span class="line">row_index = <span class="hljs-number">0</span></span><br><span class="line">alltags=[]</span><br><span class="line"><span class="hljs-keyword">for</span> row <span class="hljs-keyword">in</span> range(rows):</span><br><span class="line">    tag_allgames =[]</span><br><span class="line">    have_games = sheet.cell_value(row, <span class="hljs-number">2</span>).split(<span class="hljs-string">', '</span>)  <span class="hljs-comment"># 获取标签对应的游戏，存入have_games列表</span></span><br><span class="line">    <span class="hljs-keyword">for</span> have_game <span class="hljs-keyword">in</span> have_games:</span><br><span class="line">        <span class="hljs-comment"># import pdb;pdb.set_trace()</span></span><br><span class="line">        <span class="hljs-keyword">if</span> have_game == <span class="hljs-string">''</span> <span class="hljs-keyword">or</span> have_game == <span class="hljs-string">' '</span>:  <span class="hljs-comment"># 如果标签对应游戏为空，跳过该行</span></span><br><span class="line">            <span class="hljs-keyword">continue</span></span><br><span class="line">        <span class="hljs-keyword">if</span> len(have_game.split(<span class="hljs-string">'!@#'</span>)) != <span class="hljs-number">2</span>:  <span class="hljs-comment"># 如果游戏名格式不对，跳过该行</span></span><br><span class="line">            <span class="hljs-keyword">continue</span></span><br><span class="line">        have_game_name = have_game.split(<span class="hljs-string">'!@#'</span>)[<span class="hljs-number">0</span>]<span class="hljs-comment"># 游戏名为have_game_name</span></span><br><span class="line">        tag_allgames.append(have_game_name)</span><br><span class="line">    alltags.append(tag_allgames)</span><br><span class="line">    <span class="hljs-comment">#print(sheet.cell_value(row, 0),tag_allgames)</span></span><br><span class="line">    num_list = numpy.zeros((rows, rows))</span><br><span class="line">    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(alltags)):</span><br><span class="line">        <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> range(len(alltags)):</span><br><span class="line">            num_list[i][j]=sim(alltags[j],alltags[i])</span><br><span class="line">    print(num_list[i][j])</span><br><span class="line">    numpy.savetxt(<span class="hljs-string">'new.csv'</span>, num_list, delimiter=<span class="hljs-string">','</span>)</span><br></pre></td></tr></table></figure>
 
-<p> <img src="/2020/01/20/%E7%A4%BE%E4%BC%9A%E5%8C%96%E6%A0%87%E7%AD%BE%E7%9A%84%E5%B1%82%E6%AC%A1%E6%9E%84%E5%BB%BA/%E6%A0%87%E7%AD%BE%E7%9B%B8%E4%BC%BC%E5%BA%A6%E7%9F%A9%E9%98%B5.png" alt="B站“剑与远征”Top20标签相似度矩阵"> </p>
-<h2 id="基于普遍性包容层次理论构建标签层次图"><a href="#基于普遍性包容层次理论构建标签层次图" class="headerlink" title="基于普遍性包容层次理论构建标签层次图"></a>基于普遍性包容层次理论构建标签层次图</h2><p>用幕布手动绘制orz 别问 问就是数据结构没学好 不会树的可视化生成</p>
+<p> <img src="/2020/01/20/%E7%A4%BE%E4%BC%9A%E5%8C%96%E6%A0%87%E7%AD%BE%E7%9A%84%E5%B1%82%E6%AC%A1%E6%9E%84%E5%BB%BA/%E6%A0%87%E7%AD%BE%E7%9B%B8%E4%BC%BC%E5%BA%A6%E7%9F%A9%E9%98%B5.png" alt="图2：B站“剑与远征”Top20标签相似度矩阵"> </p>
+<h2 id="基于普遍性包容层次理论构建标签层次图"><a href="#基于普遍性包容层次理论构建标签层次图" class="headerlink" title="基于普遍性包容层次理论构建标签层次图"></a>基于普遍性包容层次理论构建标签层次图</h2><blockquote>
+<p>用幕布手动绘制orz </p>
+<p>别问QAQ 问就是数据结构没学好 不会树的可视化生成</p>
+</blockquote>
 <p> <img src="/2020/01/20/%E7%A4%BE%E4%BC%9A%E5%8C%96%E6%A0%87%E7%AD%BE%E7%9A%84%E5%B1%82%E6%AC%A1%E6%9E%84%E5%BB%BA/1.png" alt="B站“剑与远征”Top20标签层次图"> </p>
+<p><strong><em>“剑与远征”仅仅是个案，选取Top20关键词来进行层次构建也实属无奈之举，从中能获得的结论是很有限的。</em></strong></p>
+<p>从横向来看“攻略”、“游戏视频”和“ponponlin”等语义不相关的词位于同一层令人迷惑，这是因为该层次结构仅仅从用户的使用习惯出发，根据标签的使用特征来构建。我们不妨这样理解：<strong>被打上<em>手机游戏</em> Tag的视频与 <em>手游/剑与远征</em> 的共现概率更高，且 <em>手机游戏</em> Tag的使用更为常见</strong>。</p>
+<p>以此类推，至少我们可以获知：</p>
+<ol>
+<li><p>在具有父子关系的社会化标签之间，一定是父标签的普遍性大于子标签，从中可以反映出资源内容的偏重点。</p>
+</li>
+<li><p>在标签层次树中执行DFS所得分支与在网络图中执行模块化所得族群一样（事实上树就是最简单的连通图），能够通过标签关系呈现内容趋势。</p>
+<p><img src="/2020/01/20/%E7%A4%BE%E4%BC%9A%E5%8C%96%E6%A0%87%E7%AD%BE%E7%9A%84%E5%B1%82%E6%AC%A1%E6%9E%84%E5%BB%BA/1.png" alt="B站“剑与远征”Top20标签层次图"> </p>
+</li>
+</ol>
 
         </div>
         
