@@ -19,7 +19,7 @@
 <meta property="og:description" content="关于社会化标签的文本分析方法.">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;img&#x2F;%E7%A4%BE%E4%BC%9A%E5%8C%96%E6%A0%87%E7%AD%BE%E7%9A%84%E5%B1%82%E6%AC%A1%E6%9E%84%E5%BB%BA%E5%B0%81%E9%9D%A2.png">
-<meta property="og:updated_time" content="2020-02-11T07:59:32.266Z">
+<meta property="og:updated_time" content="2020-02-11T12:05:32.912Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;img&#x2F;%E7%A4%BE%E4%BC%9A%E5%8C%96%E6%A0%87%E7%AD%BE%E7%9A%84%E5%B1%82%E6%AC%A1%E6%9E%84%E5%BB%BA%E5%B0%81%E9%9D%A2.png">
 
@@ -155,7 +155,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    12 minutes read (About 1855 words)
+                    16 minutes read (About 2385 words)
                 </span>
                 
                 
@@ -215,12 +215,16 @@
 <p>从横向来看“攻略”、“游戏视频”和“ponponlin”等语义不相关的词位于同一层令人迷惑，这是因为该层次结构仅仅从用户的使用习惯出发，根据标签的使用特征来构建。我们不妨这样理解：<strong>被打上<em>手机游戏</em> Tag的视频与 <em>手游/剑与远征</em> 的共现概率更高，且 <em>手机游戏</em> Tag的使用更为常见</strong>。</p>
 <p>以此类推，至少我们可以获知：</p>
 <ol>
-<li><p>在具有父子关系的社会化标签之间，一定是父标签的普遍性大于子标签，从中可以反映出资源内容的偏重点。</p>
+<li><p>在具有父子关系的社会化标签之间，一定是父标签的普遍性大于子标签，<strong>从中可以反映出资源内容的偏重点</strong>。</p>
 </li>
-<li><p>在标签层次树中执行DFS所得分支与在网络图中执行模块化所得族群一样（事实上树就是最简单的连通图），能够通过标签关系呈现内容趋势。</p>
-<p><img src="/2020/01/20/%E7%A4%BE%E4%BC%9A%E5%8C%96%E6%A0%87%E7%AD%BE%E7%9A%84%E5%B1%82%E6%AC%A1%E6%9E%84%E5%BB%BA/1.png" alt="B站“剑与远征”Top20标签层次图"> </p>
+<li><p>在标签层次树中执行DFS所得分支与在网络图中执行模块化所得族群一样（<strong>事实上树就是最简单的连通图</strong>），<strong>能够通过标签关系呈现内容趋势</strong>。</p>
+<p><img src="/2020/01/20/%E7%A4%BE%E4%BC%9A%E5%8C%96%E6%A0%87%E7%AD%BE%E7%9A%84%E5%B1%82%E6%AC%A1%E6%9E%84%E5%BB%BA/Top20%E5%85%B3%E9%94%AE%E8%AF%8D%E7%BD%91%E7%BB%9C%E5%9B%BE.png" alt="B站“剑与远征”Top20标签网络图"> </p>
 </li>
 </ol>
+<h1 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h1><p>互联网上各种用户参与的网页、论坛、社交网络等数据，无意间构成大量具有研究价值的自然标注资源，标签就是其中一种典型的显式自然标注。通过拥有不同专业知识背景、兴趣爱好广泛的大量非专家的互联网用户自发地使用任意自然语言词汇为感兴趣的资源创建标签并与他人分享的过程，采用自底向上的方式汇集用户自由标注的标签，形成社会化标签。</p>
+<p>但社会化标签对研究造成的困扰在于：其缺少明显可供挖掘语义关系的来源和具体应用的语境，对于模糊和歧义的标签，很难明确标签的含义。且由于标注的随意性，以及用户的兴趣，专业程度的不同，导致社会化标签没有统一的标准，标签质量层次不齐。</p>
+<p>这篇Blog主要基于普遍性包容层次理论来构建社会化标签的层次结构，是最简单的、出于概率角度的考虑。囿于笔者在NLP方面的知识所限，当前的标签层次分析法在实际研究中的支持作用并不明显，初步的想法是从经过模块化处理后的网络图中抽出子模块，再将子模块的标签进行层次建构，更进一步地获得在结论上的支持，而不留驻于原来子模块的网络图这一步即止。</p>
+<p>除了确实超出现有能力范围的从矩阵到树的可视化外，笔者的顾虑更多在于：<strong>简单粗暴的概率比较</strong>是否会掩盖那些更有价值的结论。所以接下来应该会继续从文献中学习提高效度的算法来改良方法~~</p>
 
         </div>
         
@@ -431,7 +435,11 @@
         <a class="is-flex" href="#基于普遍性包容层次理论构建标签层次图">
         <span class="has-mr-6">3.2</span>
         <span>基于普遍性包容层次理论构建标签层次图</span>
-        </a></li></ul></li></ul>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#写在最后">
+        <span class="has-mr-6">4</span>
+        <span>写在最后</span>
+        </a></li></ul>
             </div>
         </div>
     </div>
